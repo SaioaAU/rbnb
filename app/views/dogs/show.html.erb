@@ -2,9 +2,11 @@
 <p><%= @dog.age %></p>
 <p><%= @dog.race %></p>
 <p><%= @dog.bio %></p>
+
 <% @dog.photos.each do |photo| %>
 <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
 <% end %>
+<p><%= @dog.owner.name %></p>
 <%= link_to "back", root_path %>
 <%= link_to "update", edit_dog_path %>
 <%= link_to "delete", dog_path(@dog), method: :delete %>

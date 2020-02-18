@@ -1,6 +1,6 @@
 class Dog < ApplicationRecord
   belongs_to :owner, class_name: "User", foreign_key: :user_id
-  has_many :rentals, dependent: :destroy
+  # has_many :rentals, dependent: :destroy
   # has_many :users, through: :rentals
   has_many_attached :photos
   validates :name, uniqueness: true, presence: true

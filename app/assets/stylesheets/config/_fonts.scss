@@ -5,6 +5,19 @@
 $body-font: "Open Sans", "Helvetica", "sans-serif";
 $headers-font: "Raleway", "Helvetica", "sans-serif";
 
+
+@font-face {
+  font-family: 'Canela Web';
+  src: asset-url('Canela-Regular-Web.eot');
+  src: asset-url('Canela-Regular-Web.eot?#iefix') format('embedded-opentype'),
+  asset-url('Canela-Regular-Web.woff2') format('woff2'),
+  asset-url('Canela-Regular-Web.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-stretch: normal;
+}
+
+
 // To use a font file (.woff) uncomment following lines
 // @font-face {
 //   font-family: "Font Name";

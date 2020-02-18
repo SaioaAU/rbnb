@@ -1,12 +1,20 @@
-<h1>Rent a Woff</h1>
-<% @dogs.each do |dog| %>
-  <ul>
-  <li><%= link_to dog.name, dog_path(dog.id) %></li>
-  <li><%= dog.age %></li>
-  <li><%= dog.race %></li>
-  <li><%= dog.bio %></li>
-  <li><%= dog.owner.name %></li>
-  </ul>
-  <% end %>
+<div class="container-fluid">
+  <div class="row align-items-center">
+    <div class="col">
+    <h1>1680 dogs ready to play</h1>
+    </div>
+  </div>
+</div>
+
+<div class="content">
+    <div class="content-dogs">
+      <% @dogs.each do |dog| %>
+      <div class="content-dog">
+        <h4><%= link_to dog.name, dog_path(dog.id) %><h4>
+        <p><%= dog.owner.name %></p>
+    </div>
+    <% end %>
+    </div>
+</div>
 
   <%= link_to "create", new_dog_path %>

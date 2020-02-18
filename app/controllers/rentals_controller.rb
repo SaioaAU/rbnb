@@ -15,6 +15,14 @@ class RentalsController < ApplicationController
     redirect_to dog_path(@dog)
   end
 
+  def index
+    @rentals = Rental.all
+  end
+
+  def show
+    @rental = Rental.find(params[:id])
+  end
+
   private
 
   def rental_params

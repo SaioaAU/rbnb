@@ -1,5 +1,5 @@
 class DogsController < ApplicationController
-  before_action :find_dog, only: [:show, :edit, :destroy, :update]
+  before_action :find_dog, only: [:show, :edit, :update, :destroy]
 
 
   def index
@@ -33,7 +33,7 @@ class DogsController < ApplicationController
 
   def destroy
     @dog.destroy
-    redirect_to @dogs
+    redirect_to root_path
   end
 
   private

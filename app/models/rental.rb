@@ -1,4 +1,4 @@
 class Rental < ApplicationRecord
-  belongs_to :users
-  belongs_to :dogs
+  belongs_to :user
+  belongs_to :dog
 end

@@ -27,8 +27,11 @@ class DogsController < ApplicationController
   end
 
   def update
-    @dog.update(dog_params)
-    redirect_to dog_path(@dog)
+    if @dog.update(dog_params)
+      redirect_to dog_path(@dog)
+    else
+      redirect_to edit_dog_path
+    end
   end
 
   def destroy
@@ -43,7 +46,7 @@ class DogsController < ApplicationController
   end
 
   def dog_params
-    params.require(:dog).permit(:name, :age, :race, :bio, :photo, :owner, :available_start_date, :available_end_date)
+    params.require(:dog).permit(:name, :age, :race, :bio, :available_start_date, :available_end_date, photos: [])
   end
 
 end

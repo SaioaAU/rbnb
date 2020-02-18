@@ -13,13 +13,12 @@ class DogsController < ApplicationController
     @dog = Dog.new
   end
 
-  # def create
-  #   @dog = Dog.new(params_dog)
-  #   @user = current_user
-  #   @dog.user = @user
-  #   @dog.save
-  #   redirect_to dog_path(@dog)
-  # end
+  def create
+    @dog = Dog.new(params_dog)
+    @dog.owner = current_user
+    @dog.save
+    redirect_to dog_path(@dog)
+  end
 
   def edit
   end
@@ -41,7 +40,7 @@ class DogsController < ApplicationController
   end
 
   def params_dog
-    params.require(:dog).permit(:name, :age, :race, :bio, :photo)
+    params.require(:dog).permit(:name, :age, :race, :bio, :photo, :owner, :available_start_date, :available_end_date)
   end
 
 end

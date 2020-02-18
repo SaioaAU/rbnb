@@ -5,6 +5,8 @@
   <li><%= dog.age %></li>
   <li><%= dog.race %></li>
   <li><%= dog.bio %></li>
-  <li><%= dog.owner %></li>
+  <li><%= dog.owner.email %></li>
   </ul>
   <% end %>
+
+  <%= link_to "create", new_dog_path %>

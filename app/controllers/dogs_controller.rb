@@ -14,7 +14,7 @@ class DogsController < ApplicationController
   end
 
   def create
-    @dog = Dog.new(params_dog)
+    @dog = Dog.new(dog_params)
     @dog.owner = current_user
     if @dog.save
       redirect_to dog_path(@dog)
@@ -27,8 +27,8 @@ class DogsController < ApplicationController
   end
 
   def update
-    @dog = Dog.update(params_dog)
-    redirect_to @dog
+    @dog.update(dog_params)
+    redirect_to dog_path(@dog)
   end
 
   def destroy
@@ -42,7 +42,7 @@ class DogsController < ApplicationController
     @dog = Dog.find(params[:id])
   end
 
-  def params_dog
+  def dog_params
     params.require(:dog).permit(:name, :age, :race, :bio, :photo, :owner, :available_start_date, :available_end_date)
   end
 

@@ -1,7 +1,7 @@
 <h1>Rent a Woff</h1>
 <% @dogs.each do |dog| %>
   <ul>
-  <li><%= dog.name %></li>
+  <li><%= link_to dog.name, dog_path(dog.id) %></li>
   <li><%= dog.age %></li>
   <li><%= dog.race %></li>
   <li><%= dog.bio %></li>

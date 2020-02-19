@@ -1,12 +1,41 @@
-.navbar-lewagon {
+.navbar-collapse {
+  flex-grow: 0;
+}
+
+.navbar {
+  height: 50px;
   justify-content: space-between;
   background: white;
 }
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
+.map-icon {
+  width: 15px;
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+.user-icon {
+  width: 18px;
+}
+
+.airdog {
+  color: #437673;
+  font-weight: 600;
+}
+
+.airdog:hover {
+  text-decoration: none;
+  color: #d8fdc7;
+}
+
+.navbar-add {
+  font-weight: 600;
+  color: #ebfee3;
+}
+
+.navbar-add:hover{
+  text-decoration: none;
+  color: #d8fdc7;
+}
+
+.navbar.fixed-bottom {
+  background: #437673;
 }

@@ -1,25 +1,53 @@
 // Import page-specific CSS files here.
 @import "home";
 
+
+.background-pic-1 {
+  background-image: url('https://prodimage.images-bn.com/pimages/9780316227704_p1_v2_s550x406.jpg');
+  background-size: cover;
+}
+
 .container-fluid {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.carousel-inner {
   height: 100vh;
-  background: #FFC3C4;
-  margin-bottom: 50px;
+}
+
+.background-green {
+  background: #cffcba;
+}
+
+.fullscreen {
+  height: 100vh;
 }
 
 .row {
   height: 100%;
 }
 
+.background-white {
+  background: white;
+}
+
+.container-fluid.paddings {
+  padding-right: 100px;
+  padding-left: 100px;
+  padding-top: 100px;
+  padding-bottom: 200px;
+}
+
 .col {
   text-align: center;
+  width: 100%;
 }
 
 h1 {
-  font-family: 'Canela Web';
-  font-weight: 400;
-  font-style: normal;
-  font-stretch: normal;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+  font-size: 2rem;
 }
 
 h4 {
@@ -27,16 +55,45 @@ h4 {
   font-size: 1rem;
 }
 
-.content {
-  width: 650px;
-  margin: 0 auto;
-}
-
 .content-dogs {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-column-gap: .2rem;
+}
+
+@media only screen and (max-width: 992px) {
+  .content-dogs {
+    grid-template-columns: 1fr 1fr 1fr;
+    padding-right: 0px;
+    padding-left: 0px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .content-dogs {
+    grid-template-columns: 1fr 1fr;
+  }
+  .container-fluid.paddings {
+    padding-right: 0px;
+    padding-left: 0px;
+    padding-top: 0px;
+  }
 }
 
 .content-dog {
+  position: relative;
   width: 100%;
+  padding-top: 95%;
+}
+
+.content-d {
+  position: absolute;
+  top: 0;
+}
+
+.dog-picture {
+  width: 100%;
+  object-fit: cover;
 }

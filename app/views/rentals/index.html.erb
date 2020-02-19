@@ -1,8 +1,35 @@
-<h1>my rentals</h1>
-<% @rentals.each do |rental| %>
-  <% if rental.user == current_user %>
-    <h3>Youve rented this dog:<%= rental.dog.name %></h3>
-    <p>renting from : <%=  rental.rented_start_date %></p>
-    <p>renting to: <%=  rental.rented_nd_date %></p>
-  <% end %>
+<h1>Rentals</h1>
+
+<h2>my dogs rentals</h2>
+
+<h3>confirmed:</h3>
+<% @myDogsConfirmedRentals.each do |rental| %>
+  <%= rental.user %>
+  <%= rental.rented_start_date %>
+  <%= rental.rented_nd_date %>
+  <p>✅</p>
 <% end %>
+
+<h3>pending: </h3>
+<% @myDogsNotConfirmedRentals.each do |rental| %>
+  <%= rental.user %>
+  <%= rental.rented_start_date %>
+  <%= rental.rented_nd_date %>
+  <%= link_to "confirm", confirm_rental_path(rental), method: :post %>
+<% end %>
+
+<h2>My rentals</h2>
+<h3>My confirmed rentals</h3>
+<% @myConfirmedRentals.each do |rental| %>
+  <p><%= rental.dog.name %> ✅</p>
+  <p><%= rental.rented_start_date %></p>
+  <p><%= rental.rented_nd_date %></p>
+<% end %>
+
+<h3>My pending rentals</h3>
+<% @myPendingRentals.each do |rental| %>
+  <p><%= rental.dog.name  %></p>
+  <p><%= rental.rented_start_date %></p>
+  <p><%= rental.rented_nd_date %></p>
+<% end %>
+

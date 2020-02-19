@@ -26,3 +26,8 @@
     </div>
   </div>
 </div>
+
+
+#<% if @dog.owner != current_user %>
+#<%= link_to "rent me!", new_dog_rental_path(@dog) %>
+#<% end %>

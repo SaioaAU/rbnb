@@ -24,8 +24,6 @@ puts 'Creating users...'
   User.create!(users_attributes)
 end
 
-
-
 puts 'Creating dogs...'
 
 

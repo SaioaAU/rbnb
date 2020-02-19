@@ -3,33 +3,44 @@
 
 .container-fluid {
   height: 100vh;
-  background: #FFC3C4;
-  margin-bottom: 50px;
 }
 
 .row {
   height: 100%;
 }
 
+.navbar-add {
+  color: white;
+}
+
+.background-white {
+  background: white;
+}
+
+.dog-picture {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
+
+.container-fluid.background-white {
+  padding: 0;
+}
+
 .col {
   text-align: center;
+  width: 100%;
 }
 
 h1 {
-  font-family: 'Canela Web';
-  font-weight: 400;
-  font-style: normal;
-  font-stretch: normal;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+  font-size: 2rem;
 }
 
 h4 {
   font-family: 'Open Sans', sans-serif;
   font-size: 1rem;
-}
-
-.content {
-  width: 650px;
-  margin: 0 auto;
 }
 
 .content-dogs {

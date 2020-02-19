@@ -1,20 +1,28 @@
 <div class="container-fluid">
   <div class="row align-items-center">
     <div class="col">
-    <h1>1680 dogs ready to play</h1>
+      <%= image_tag "dog-icon" %>
     </div>
+      <nav class="navbar fixed-bottom bg-dark justify-content-center">
+        <%= link_to "Rent a way your Woff", new_dog_path, class: "navbar-add"%>
+      </nav>
+    </div>
+  </div>
+
+<div class="container-fluid background-white">
+  <div class="content-dogs">
+    <% @dogs.each do |dog| %>
+    <%= link_to dog => 'go' do %>
+    <div class="content-dog">
+      <% if !dog.photos.first.nil? %>
+      <%= cl_image_tag dog.photos.first.key, class: "dog-picture" %>
+      <% else %>
+      <%= image_tag "https://images.unsplash.com/photo-1518020382113-a7e8fc38eac9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2776&q=80", class: "dog-picture" %>
+      <% end %>
+    </div>
+    <% end %>
+  <% end %>
   </div>
 </div>
 
-<div class="content">
-    <div class="content-dogs">
-      <% @dogs.each do |dog| %>
-      <div class="content-dog">
-        <h4><%= link_to dog.name, dog_path(dog.id) %><h4>
-        <p><%= dog.owner.name %></p>
-    </div>
-    <% end %>
-    </div>
-</div>
 
-  <%= link_to "create", new_dog_path %>

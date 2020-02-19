@@ -3,6 +3,7 @@ class RentalsController < ApplicationController
     @dog = Dog.find(params[:dog_id])
     @rental = Rental.new
     @user = User.all.find { |user| user  == current_user }
+    @rental.rented_start_date = Date.today
   end
 
   def create

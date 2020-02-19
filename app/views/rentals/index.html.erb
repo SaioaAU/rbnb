@@ -1,30 +1,35 @@
 <h1>Rentals</h1>
 
-
-
 <h2>my dogs rentals</h2>
 
-<% current_user.dogs.each do |dogs| %>
-  <% dogs.each do |dog| %>
-    <% dog.rentals.each do |rental| %>
-    <% if rental.confirmed == true %>
-      <p> Dogs name: <%= rental.dog.name %> </p>
-      <p> Renting starts: <%= rental.rented_start_date %> </p>
-      <% end %>
-    <% end %>
-  <% end %>
+<h3>confirmed:</h3>
+<% @myDogsConfirmedRentals.each do |rental| %>
+  <%= rental.user %>
+  <%= rental.rented_start_date %>
+  <%= rental.rented_nd_date %>
+  <p>✅</p>
 <% end %>
 
+<h3>pending: </h3>
+<% @myDogsNotConfirmedRentals.each do |rental| %>
+  <%= rental.user %>
+  <%= rental.rented_start_date %>
+  <%= rental.rented_nd_date %>
+  <%= link_to "confirm", confirm_rental_path(rental), method: :post %>
+<% end %>
 
-<h2>Pending confirmation rentals</h2>
+<h2>My rentals</h2>
+<h3>My confirmed rentals</h3>
+<% @myConfirmedRentals.each do |rental| %>
+  <p><%= rental.dog.name %> ✅</p>
+  <p><%= rental.rented_start_date %></p>
+  <p><%= rental.rented_nd_date %></p>
+<% end %>
 
-<% current_user.dogs.each do |dogs| %>
-  <% dogs.each do |dog| %>
-    <% dog.rentals.each do |rental| %>
-    <% if rental.confirmed != true %>
-     #create a confirm = true method and call it by submitting a button
-      <% end %>
-    <% end %>
-  <% end %>
+<h3>My pending rentals</h3>
+<% @myPendingRentals.each do |rental| %>
+  <p><%= rental.dog.name  %></p>
+  <p><%= rental.rented_start_date %></p>
+  <p><%= rental.rented_nd_date %></p>
 <% end %>
 

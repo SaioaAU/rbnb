@@ -1,24 +1,26 @@
-<div class="container-fluid">
+<div class="container-fluid background-green fullscreen">
   <div class="row align-items-center">
     <div class="col">
-      <%= image_tag "dog-icon" %>
+      <%= image_tag "woof-logo", width: 300 %>
     </div>
-      <nav class="navbar fixed-bottom bg-dark justify-content-center">
+      <nav class="navbar fixed-bottom justify-content-center">
         <%= link_to "Rent a way your Woff", new_dog_path, class: "navbar-add"%>
       </nav>
     </div>
   </div>
 
-<div class="container-fluid background-white">
-  <div class="content-dogs">
+<div class="container-fluid paddings">
+  <div class="content-dogs pb-10">
     <% @dogs.each do |dog| %>
-    <%= link_to dog => 'go' do %>
+    <%= link_to dog_path(dog) do %>
     <div class="content-dog">
-      <% if !dog.photos.first.nil? %>
-      <%= cl_image_tag dog.photos.first.key, class: "dog-picture" %>
-      <% else %>
-      <%= image_tag "https://images.unsplash.com/photo-1518020382113-a7e8fc38eac9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2776&q=80", class: "dog-picture" %>
-      <% end %>
+      <div class="content-d">
+        <% if !dog.photos.first.nil? %>
+        <%= cl_image_tag dog.photos.first.key, class: "dog-picture" %>
+        <% else %>
+        <%= image_tag "https://images.unsplash.com/photo-1537204696486-967f1b7198c8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3052&q=80", class: "dog-picture" %>
+        <% end %>
+      </div>
     </div>
     <% end %>
   <% end %>

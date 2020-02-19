@@ -1,13 +1,28 @@
-<h1><%= @dog.name %></h1>
-<p><%= @dog.age %></p>
-<p><%= @dog.race %></p>
-<p><%= @dog.bio %></p>
+<div class="container-fluid fullscreen">
+  <div class="row">
+    <div class="col-6 fullscreen">
 
-<% @dog.photos.each do |photo| %>
-<%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
-<% end %>
-<p><%= @dog.owner.name %></p>
-<%= link_to "back", root_path %>
-<%= link_to "update", edit_dog_path %>
-<%= link_to "delete", dog_path(@dog), method: :delete %>
-<%= link_to "rent me!", new_dog_rental_path(@dog) %>
+    <% @dog.photos.each do |photo| %>
+    <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+    <% end %>
+    </div>
+
+    <div class="col-6">
+    <h1><%= @dog.name %></h1>
+    <p><%= @dog.age %></p>
+    <p><%= @dog.race %></p>
+    <p><%= @dog.bio %></p>
+
+    <p><%= @dog.owner.name %></p>
+    <%= link_to "back", root_path %>
+    <%= link_to "update", edit_dog_path %>
+    <%= link_to "delete", dog_path(@dog), method: :delete %>
+    <%= link_to "rent me!", new_dog_rental_path(@dog) %>
+
+      </div>
+      <nav class="navbar fixed-bottom justify-content-center">
+        <%= link_to "Rent a way your Woff", new_dog_path, class: "navbar-add"%>
+      </nav>
+    </div>
+  </div>
+</div>

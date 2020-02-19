@@ -1,7 +1,11 @@
 // Import page-specific CSS files here.
 @import "home";
 
-.container-fluid {
+.background-green {
+  background: #cffcba;
+}
+
+.fullscreen {
   height: 100vh;
 }
 
@@ -9,22 +13,15 @@
   height: 100%;
 }
 
-.navbar-add {
-  color: white;
-}
-
 .background-white {
   background: white;
 }
 
-.dog-picture {
-  width: 100%;
-  height: 400px;
-  object-fit: cover;
-}
-
-.container-fluid.background-white {
-  padding: 0;
+.container-fluid.paddings {
+  padding-right: 100px;
+  padding-left: 100px;
+  padding-top: 100px;
+  padding-bottom: 200px;
 }
 
 .col {
@@ -45,9 +42,43 @@ h4 {
 
 .content-dogs {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-column-gap: .2rem;
+}
+
+@media only screen and (max-width: 992px) {
+  .content-dogs {
+    grid-template-columns: 1fr 1fr 1fr;
+    padding-right: 0px;
+    padding-left: 0px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .content-dogs {
+    grid-template-columns: 1fr 1fr;
+  }
+  .container-fluid.paddings {
+    padding-right: 0px;
+    padding-left: 0px;
+    padding-top: 0px;
+  }
 }
 
 .content-dog {
+  position: relative;
   width: 100%;
+  padding-top: 95%;
+}
+
+.content-d {
+  position: absolute;
+  top: 0;
+}
+
+.dog-picture {
+  width: 100%;
+  object-fit: cover;
 }

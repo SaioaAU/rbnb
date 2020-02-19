@@ -17,10 +17,25 @@
 }
 
 .airdog {
-  color: black;
+  color: #437673;
   font-weight: 600;
+}
+
+.airdog:hover {
+  text-decoration: none;
+  color: #d8fdc7;
 }
 
 .navbar-add {
   font-weight: 600;
+  color: #ebfee3;
+}
+
+.navbar-add:hover{
+  text-decoration: none;
+  color: #d8fdc7;
+}
+
+.navbar.fixed-bottom {
+  background: #437673;
 }

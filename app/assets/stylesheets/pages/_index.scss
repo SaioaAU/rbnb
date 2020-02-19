@@ -1,6 +1,21 @@
 // Import page-specific CSS files here.
 @import "home";
 
+
+.background-pic-1 {
+  background-image: url('https://prodimage.images-bn.com/pimages/9780316227704_p1_v2_s550x406.jpg');
+  background-size: cover;
+}
+
+.container-fluid {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.carousel-inner {
+  height: 100vh;
+}
+
 .background-green {
   background: #cffcba;
 }

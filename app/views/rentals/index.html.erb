@@ -1,0 +1,8 @@
+<h1>my rentals</h1>
+<% @rentals.each do |rental| %>
+  <% if rental.user == current_user %>
+    <h3>Youve rented this dog:<%= rental.dog.name %></h3>
+    <p>renting from : <%=  rental.rented_start_date %></p>
+    <p>renting to: <%=  rental.rented_nd_date %></p>
+  <% end %>
+<% end %>

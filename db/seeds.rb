@@ -5,11 +5,13 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
 require 'faker'
 puts 'Cleaning database...'
 Dog.destroy_all
 User.destroy_all
 Rental.destroy_all
+
 puts 'Creating users...'
 
 50.times do
@@ -25,6 +27,7 @@ end
 
 
 puts 'Creating dogs...'
+
 
 50.times do
   today = Date.today + rand(0..50)

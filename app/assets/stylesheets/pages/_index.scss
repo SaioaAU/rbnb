@@ -1,2 +1,42 @@
 // Import page-specific CSS files here.
 @import "home";
+
+.container-fluid {
+  height: 100vh;
+  background: #FFC3C4;
+  margin-bottom: 50px;
+}
+
+.row {
+  height: 100%;
+}
+
+.col {
+  text-align: center;
+}
+
+h1 {
+  font-family: 'Canela Web';
+  font-weight: 400;
+  font-style: normal;
+  font-stretch: normal;
+}
+
+h4 {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1rem;
+}
+
+.content {
+  width: 650px;
+  margin: 0 auto;
+}
+
+.content-dogs {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.content-dog {
+  width: 100%;
+}

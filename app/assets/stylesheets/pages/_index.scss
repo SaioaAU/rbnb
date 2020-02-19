@@ -1,10 +1,15 @@
 // Import page-specific CSS files here.
 @import "home";
 
+.carousel-wrapper {
+  position: relative;
+  color: white;
+  width: 100%;
+  height: 100vh;
+}
 
-.background-pic-1 {
-  background-image: url('https://prodimage.images-bn.com/pimages/9780316227704_p1_v2_s550x406.jpg');
-  background-size: cover;
+.carousel-text {
+  position: absolute;
 }
 
 .container-fluid {
@@ -45,9 +50,9 @@
 }
 
 h1 {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-weight: 600;
-  font-size: 2rem;
+  font-size: 2.2rem;
 }
 
 h4 {

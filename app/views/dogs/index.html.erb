@@ -1,26 +1,35 @@
 
 <div class="container-fluid top background-green fullscreen">
-
   <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <h1>Hello</h1>
-      <%= image_tag "https://prodimage.images-bn.com/pimages/9780316227704_p1_v2_s550x406.jpg", class: "d-block w-100" %>
-    </div>
-    <div class="carousel-item">
-      <div>
-      <%= image_tag "https://prodimage.images-bn.com/pimages/9780316227704_p1_v2_s550x406.jpg", class: "d-block w-100" %>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <div class="carousel-wrapper d-flex align-items-center justify-content-center">
+          <div class="carousel-text">
+          <h1>1680 dogs ready to play</h1>
+          <p>Text</p>
+          </div>
+          <%= image_tag "dog1", class: "d-block w-100" %>
+        </div>
       </div>
-    </div>
-    <div class="carousel-item">
-      <%= image_tag "https://prodimage.images-bn.com/pimages/9780316227704_p1_v2_s550x406.jpg", width: 300, class: "d-block w-100" %>
-    </div>
+<!--       <div class="carousel-item">
+        <div>
+        <div class="carousel-text">
+          <h1>Hello</h1>
+          <%= image_tag "https://prodimage.images-bn.com/pimages/9780316227704_p1_v2_s550x406.jpg", class: "d-block w-100" %>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <div class="carousel-text">
+          <h1>Hello</h1>
+          <%= image_tag "https://prodimage.images-bn.com/pimages/9780316227704_p1_v2_s550x406.jpg", class: "d-block w-100" %>
+        </div>
+    </div> -->
   </div>
-    <nav class="navbar fixed-bottom justify-content-center">
-        <%= link_to "Rent a way your Woff", new_dog_path, class: "navbar-add"%>
-      </nav>
 </div>
-  </div>
+
+  <nav class="navbar fixed-bottom justify-content-center">
+    <%= link_to "RENT A WAY YOUR WOFF", new_dog_path, class: "navbar-add"%>
+  </nav>
 
 
 <div class="container-fluid paddings">

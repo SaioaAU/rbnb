@@ -1,20 +1,44 @@
-<div class="container-fluid">
-  <div class="row align-items-center">
-    <div class="col">
-    <h1>1680 dogs ready to play</h1>
+
+<div class="container-fluid top background-green fullscreen">
+
+  <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <h1>Hello</h1>
+      <%= image_tag "https://prodimage.images-bn.com/pimages/9780316227704_p1_v2_s550x406.jpg", class: "d-block w-100" %>
     </div>
+    <div class="carousel-item">
+      <div>
+      <%= image_tag "https://prodimage.images-bn.com/pimages/9780316227704_p1_v2_s550x406.jpg", class: "d-block w-100" %>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <%= image_tag "https://prodimage.images-bn.com/pimages/9780316227704_p1_v2_s550x406.jpg", width: 300, class: "d-block w-100" %>
+    </div>
+  </div>
+    <nav class="navbar fixed-bottom justify-content-center">
+        <%= link_to "Rent a way your Woff", new_dog_path, class: "navbar-add"%>
+      </nav>
+</div>
+  </div>
+
+
+<div class="container-fluid paddings">
+  <div class="content-dogs pb-10">
+    <% @dogs.each do |dog| %>
+    <%= link_to dog_path(dog) do %>
+    <div class="content-dog">
+      <div class="content-d">
+        <% if !dog.photos.first.nil? %>
+        <%= cl_image_tag dog.photos.first.key, class: "dog-picture" %>
+        <% else %>
+        <%= image_tag "https://images.unsplash.com/photo-1537204696486-967f1b7198c8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3052&q=80", class: "dog-picture" %>
+        <% end %>
+      </div>
+    </div>
+    <% end %>
+  <% end %>
   </div>
 </div>
 
-<div class="content">
-    <div class="content-dogs">
-      <% @dogs.each do |dog| %>
-      <div class="content-dog">
-        <h4><%= link_to dog.name, dog_path(dog.id) %><h4>
-        <p><%= dog.owner.name %></p>
-    </div>
-    <% end %>
-    </div>
-</div>
 
-  <%= link_to "create", new_dog_path %>

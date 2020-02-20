@@ -44,7 +44,11 @@
 
       <div class="pt-4 border-bottom">
         <p class="p-tag">Owner:</p>
-        <p><%= @dog.owner.name %> dsfadsf</p>
+        <% if @dog.owner == current_user %>
+          <%= current_user.name %>
+          <% else %>
+            <p><%= @dog.owner.name %></p>
+          <% end %>
       </div>
 
       <div class="pt-5 pb-3">
@@ -57,12 +61,16 @@
       <i class="fas fa-arrow-left pr-1"></i>
       <% end %>
 
-      <%= link_to edit_dog_path do %>
-      <i class="fas fa-redo pr-1"></i>
+      <% if @dog.owner == current_user %>
+        <%= link_to edit_dog_path do %>
+        <i class="fas fa-redo pr-1"></i>
+        <% end %>
       <% end %>
 
-      <%= link_to dog_path(@dog), method: :delete do %>
-      <i class="far fa-trash-alt"></i>
+      <% if @dog.owner == current_user %>
+        <%= link_to dog_path(@dog), method: :delete do %>
+        <i class="far fa-trash-alt"></i>
+        <% end %>
       <% end %>
 
   </div>

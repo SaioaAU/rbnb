@@ -3,7 +3,6 @@ class DogsController < ApplicationController
 
 
   def index
-
     result = Geocoder.search("34 schweigaards gate")
     @dogs = Dog.geocoded #returns dogs with coordinates
     @markers = @dogs.map do |dog|

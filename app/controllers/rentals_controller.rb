@@ -11,8 +11,11 @@ class RentalsController < ApplicationController
     @dog = Dog.find(params[:dog_id])
     @rental.dog = @dog
     @rental.user = current_user
-    @rental.save
-    redirect_to rentals_path
+    if @rental.save
+      redirect_to rentals_path
+    else
+      render :new
+    end
   end
 
   def index

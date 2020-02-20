@@ -1,10 +1,15 @@
 .navbar-lewagon {
   justify-content: space-between;
   background-color: transparent;
-  transition: 0.2s background-color ease;
+  transition: 0.5s background-color ease;
 }
 
 .navbar-lewagon-white {
+  background-color: black;
+  border-bottom: 1px solid black;
+}
+
+.navbar-lewagon-black {
   background-color: white;
   border-bottom: 1px solid black;
 }
@@ -15,6 +20,18 @@
 
 .navbar-brand {
   color: white;
+  font-weight: 600;
+  font-size: 1.3rem;
+  font-family: 'Canela Web';
+  font-weight: 400;
+  font-style: normal;
+  font-stretch: normal;
+  font-size: 1.3rem;
+  text-align: center;
+}
+
+.navbar-brand:hover {
+  color: #cffcba;
 }
 
 a.nav-link {
@@ -63,9 +80,14 @@ a.nav-link {
 
 .navbar-add:hover{
   text-decoration: none;
-  color: #d8fdc7;
+  color: white;
 }
 
 .navbar.fixed-bottom {
   background: black;
+  transition: background 2s;
+}
+
+.navbar.fixed-bottom:hover {
+  background: linear-gradient(90deg, rgba(118,184,139,1) 0%, rgba(67,118,115,1) 47%, rgba(91,170,117,1) 100%);
 }

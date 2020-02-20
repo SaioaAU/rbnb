@@ -15,25 +15,22 @@
               <% end %>
             </div>
           </div>
-            <% else %>
+        <% else %>
             <%= image_tag "https://images.unsplash.com/photo-1537204696486-967f1b7198c8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3052&q=80" %>
         <% end %>
       </div>
-    </div>
 
     <div class="col-12 col-md-6 p-5">
       <h3><%= @dog.name %></h3>
-
-      <div class="border-bottom pt-4">
+      <div class="border-bottom pt-4 pb-3">
       <p class="p-tag">Description:</p>
-      <p><%= @dog.bio %></p>
+      <p class="dog-tag"><%= @dog.bio %></p>
       </div>
-
-      <div class="container p-0 pt-4 border-bottom pb-3">
+      <div class="p-0 pt-4 border-bottom pb-3">
         <div class="row">
           <div class="col-9">
           <p class="p-tag">Breed:</p>
-          <h4><%= @dog.race %></h4>
+          <h4 class="capitalize"><%= @dog.race %></h4>
           </div>
           <div class="col-3">
           <p class="p-tag">Age:</p>
@@ -41,30 +38,31 @@
           </div>
         </div>
       </div>
-
-      <div class="pt-4 border-bottom">
+      <div class="pt-4 pb-4 border-bottom dog-tag">
         <p class="p-tag">Owner:</p>
-        <p><%= @dog.owner.name %> dsfadsf</p>
+        <p class="dog-tag"><%= @dog.owner.name %> dsfadsf</p>
       </div>
 
-      <div class="pt-5 pb-3">
+      <div class="d-flex justify-content-between mt-5">
+      <div>
         <% if @dog.owner != current_user %>
         <%= link_to "Rent me!", new_dog_rental_path(@dog), class:"btn btn-light" %>
         <% end %>
       </div>
+      <div>
+        <%= link_to root_path do %>
+        <i class="fas fa-arrow-left pr-1"></i>
+        <% end %>
 
-      <%= link_to root_path do %>
-      <i class="fas fa-arrow-left pr-1"></i>
-      <% end %>
+        <%= link_to edit_dog_path do %>
+        <i class="fas fa-redo pr-1"></i>
+        <% end %>
 
-      <%= link_to edit_dog_path do %>
-      <i class="fas fa-redo pr-1"></i>
-      <% end %>
-
-      <%= link_to dog_path(@dog), method: :delete do %>
-      <i class="far fa-trash-alt"></i>
-      <% end %>
-
+        <%= link_to dog_path(@dog), method: :delete do %>
+        <i class="far fa-trash-alt"></i>
+        <% end %>
+      </div>
+    </div>
   </div>
 </div>
 

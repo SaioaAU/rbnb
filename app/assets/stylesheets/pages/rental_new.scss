@@ -1,8 +1,8 @@
 .form_dog {
   object-fit: cover;
   border-radius: 50%;
-  width: 33vw;
-  height: 33vw;
+  width: 8rem;
+  height: 8rem;
 }
 
 .container {
@@ -14,6 +14,9 @@
 
 .header_container {
   width: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .img_container {
@@ -21,14 +24,72 @@
   position: absolute;
   right: 15vw;
   top: 15vh;
-  display: none;
+}
+textarea {
+  width: 100%;
+  position: relative;
+  border-radius: 1rem;
+  padding: 1rem;
+}
+
+.btn {
+  background-color: #2C7873;
+  border-radius: 1rem;
+  margin-top: 4rem;
+  color: #FFF;
+}
+
+h2 {
+  margin-bottom: 4rem;
 }
 
 .form_container {
-  width: 90vw;
+  width: 100vw;
   background-color: #F2FFF0;
-  padding-right: 5vw;
-  padding-left: 5vw;
+  padding-right: 1rem;
+  padding-left: 1rem;
+  padding-top: 10vw;
+  padding-bottom: 10vw;
+  border-top: solid 1px;
+  border-bottom: solid 1px;
+}
+
+.button_container {
+
+}
+
+.form-group {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  background-color: #F2FFF0;
+  margin-bottom: 0;
+}
+
+.form-control:disabled, .form-control[readonly] {
+  background-color: #F2FFF0;
+  border: none;
+  padding: 0;
+  height: auto;
+}
+
+label {
+  margin: 0;
+  margin-left: 1rem;
+}
+
+#rental_rented_start_date {
+  width: auto;
+}
+
+#rental_rented_nd_date {
+  width: auto;
+}
+
+.line {
+  border-bottom: solid 1px #000;
+  margin-bottom: 2vh;
+  margin-top: .2vh;
 }
 
 p {

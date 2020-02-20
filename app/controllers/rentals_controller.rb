@@ -13,15 +13,42 @@ class RentalsController < ApplicationController
     @rental.dog = @dog
     @rental.user = current_user
     @rental.save
-    redirect_to dog_path(@dog)
+    redirect_to rentals_path
   end
 
   def index
-    @rentals = Rental.all
+    @myDogsConfirmedRentals = []
+    @myDogsNotConfirmedRentals = []
+    current_user.dogs.each do |dog|
+      dog.rentals.each do |rental|
+        if rental.confirmed
+          @myDogsConfirmedRentals << rental
+        else
+          @myDogsNotConfirmedRentals << rental
+        end
+      end
+    end
+
+    @myConfirmedRentals = []
+    @myPendingRentals = []
+    current_user.rentals.each do |rental|
+      if rental.confirmed
+        @myConfirmedRentals << rental
+      else
+        @myPendingRentals << rental
+      end
+    end
   end
 
   def show
     @rental = Rental.find(params[:id])
+  end
+
+  def confirm
+    @rental = Rental.find(params[:id])
+    @rental.confirmed = true
+    @rental.save
+    redirect_to rentals_path
   end
 
   private

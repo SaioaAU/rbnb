@@ -1,19 +1,18 @@
 <div class="container-fluid collage">
   <div class="container carousel-inner ">
     <div class="row justify-content-center align-items-center">
-    <div class="col max">
-
-<%= simple_form_for @dog do |f| %>
-<%= f.input :name %>
-<%= f.input :age %>
-<%= f.input :race %>
-<%= f.input :bio %>
-<%= f.input :available_start_date, as: :date, html5: true %>
-<%= f.input :available_end_date, as: :date, html5: true %>
-<%= f.input :photos, as: :file, input_html: { multiple: true } %>
-<%= f.button :submit %>
-<% end %>
-</div>
-</div>
-</div>
+      <div class="col max">
+      <%= simple_form_for @dog do |f| %>
+      <%= f.input :name %>
+      <%= f.input :age %>
+      <%= f.input :race %>
+      <%= f.input :bio %>
+      <%= f.input :available_start_date, as: :date, html5: true %>
+      <%= f.input :available_end_date, as: :date, html5: true %>
+      <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+      <%= f.button :submit %>
+      <% end %>
+      </div>
+    </div>
+  </div>
 </div>

@@ -1,6 +1,6 @@
 <div class="navbar navbar-expand navbar-lewagon fixed-top">
-  <%= link_to "#", class: "navbar-brand" do %>
-    <%= image_tag "dog" %>
+  <%= link_to root_path, class: "navbar-brand" do %>
+      Rent A Woff
   <% end %>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -11,17 +11,16 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <%= link_to "Home", "#", class: "nav-link" %>
+        <%= link_to "#", class: "nav-link" do %>
+        <%= image_tag "map-round-white", class: "map-icon-size" %>
+        <% end %>
       </li>
       <li class="nav-item">
-        <%= link_to "Messages", "#", class: "nav-link" %>
+        <%= link_to "#", class: "nav-link" do %>
+        <%= image_tag "user-round-white", class: "user-icon-size" %>
+        <% end %>
       </li>
-      <li class="nav-item dropdown">
-        <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-          <%= link_to "Action", "#", class: "dropdown-item" %>
-          <%= link_to "Another action", "#", class: "dropdown-item" %>
-        </div>
+
       </li>
     </ul>
   </div>

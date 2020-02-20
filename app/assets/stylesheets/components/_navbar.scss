@@ -13,6 +13,10 @@
   flex-grow: 0;
 }
 
+.navbar-brand {
+  color: white;
+}
+
 .navbar-lewagon .navbar-brand img {
   width: 40px;
 }
@@ -25,12 +29,12 @@
   height: 60px;
 }
 
-.map-icon {
-  width: 15px;
+.map-icon-size {
+  width: 35px;
 }
 
-.user-icon {
-  width: 18px;
+.user-icon-size {
+  width: 35px;
 }
 
 .airdog {

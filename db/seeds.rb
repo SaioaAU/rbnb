@@ -37,7 +37,10 @@ puts 'Creating dogs...'
       bio: 'Like to walk in the woods and pee on trees. Woff!',
       available_start_date: today,
       available_end_date: today + rand(0..50),
-      owner: User.all.sample
+      owner: User.all.sample,
+      latitude: 59.9112151,
+      longitude: 10.7599467,
+      address: "34 schweigaards gate"
     }
   Dog.create!(dogs_attributes)
 end

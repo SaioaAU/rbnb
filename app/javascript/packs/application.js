@@ -4,5 +4,6 @@ require("channels")
 
 import "bootstrap";
 import { myCalendar } from "../components/calendar.js"
+
 myCalendar();
 

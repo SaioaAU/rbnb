@@ -6,6 +6,16 @@
 $body-font: "Open Sans", "Helvetica", "sans-serif";
 $headers-font: "Canela Web", "Helvetica", "sans-serif";
 
+@font-face {
+  font-family: 'Canela Web';
+  src: asset-url('Canela-Light-Web.eot');
+  src: asset-url('Canela-Light-Web.eot?#iefix') format('embedded-opentype'),
+  asset-url('Canela-Light-Web.woff2') format('woff2'),
+  asset-url('Canela-Light-Web.woff') format('woff');
+  font-weight: 100;
+  font-style: normal;
+  font-stretch: normal;
+}
 
 @font-face {
   font-family: 'Canela Web';
@@ -14,6 +24,28 @@ $headers-font: "Canela Web", "Helvetica", "sans-serif";
   asset-url('Canela-Regular-Web.woff2') format('woff2'),
   asset-url('Canela-Regular-Web.woff') format('woff');
   font-weight: 400;
+  font-style: normal;
+  font-stretch: normal;
+}
+
+@font-face {
+  font-family: 'Canela Web';
+  src: asset-url('Canela-Bold-Web.eot');
+  src: asset-url('Canela-Bold-Web.eot?#iefix') format('embedded-opentype'),
+  asset-url('Canela-Bold-Web.woff2') format('woff2'),
+  asset-url('Canela-Bold-Web.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-stretch: normal;
+}
+
+@font-face {
+  font-family: 'Canela Web';
+  src: asset-url('Canela-Black-Web.eot');
+  src: asset-url('Canela-Black-Web.eot?#iefix') format('embedded-opentype'),
+  asset-url('Canela-Black-Web.woff2') format('woff2'),
+  asset-url('Canela-Black-Web.woff') format('woff');
+  font-weight: 900;
   font-style: normal;
   font-stretch: normal;
 }

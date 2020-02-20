@@ -3,7 +3,17 @@ class DogsController < ApplicationController
 
 
   def index
-    @dogs = Dog.all
+
+    result = Geocoder.search("34 schweigaards gate")
+    @dogs = Dog.geocoded #returns dogs with coordinates
+    @markers = @dogs.map do |dog|
+      {
+        lat: dog.latitude,
+        lng: dog.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { dog: dog }),
+        image_url: helpers.asset_url('dog-icon.png')
+      }
+    end
   end
 
   def show

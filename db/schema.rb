@@ -52,13 +52,9 @@ ActiveRecord::Schema.define(version: 2020_02_19_114327) do
   create_table "rentals", force: :cascade do |t|
     t.date "rented_start_date"
     t.date "rented_nd_date"
-    t.bigint "dog_id", null: false
-    t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.boolean "confirmed", default: false
-    t.index ["dog_id"], name: "index_rentals_on_dog_id"
-    t.index ["user_id"], name: "index_rentals_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -76,6 +72,4 @@ ActiveRecord::Schema.define(version: 2020_02_19_114327) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "dogs", "users"
-  add_foreign_key "rentals", "dogs"
-  add_foreign_key "rentals", "users"
 end

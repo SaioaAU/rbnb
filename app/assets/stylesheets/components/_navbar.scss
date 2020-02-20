@@ -1,19 +1,48 @@
+.navbar-lewagon {
+  justify-content: space-between;
+  background-color: transparent;
+  transition: 0.2s background-color ease;
+}
+
+.navbar-lewagon-white {
+  background-color: white;
+  border-bottom: 1px solid black;
+}
+
+.navbar-lewagon .navbar-collapse {
+  flex-grow: 0;
+}
+
+.navbar-brand {
+  color: white;
+}
+
+a.nav-link {
+  color: white;
+}
+
+.nav-link {
+  padding: 0;
+}
+
+.navbar-lewagon .navbar-brand img {
+  width: 40px;
+}
+
 .navbar-collapse {
   flex-grow: 0;
 }
 
-.navbar {
-  height: 50px;
-  justify-content: space-between;
-  background: white;
+.navbar.fixed-bottom {
+  height: 60px;
 }
 
-.map-icon {
-  width: 15px;
+.map-icon-size {
+  width: 35px;
 }
 
-.user-icon {
-  width: 18px;
+.user-icon-size {
+  width: 35px;
 }
 
 .airdog {
@@ -27,8 +56,9 @@
 }
 
 .navbar-add {
-  font-weight: 600;
-  color: #ebfee3;
+  font-weight: 500;
+  color: white;
+  letter-spacing: .1rem;
 }
 
 .navbar-add:hover{
@@ -37,5 +67,5 @@
 }
 
 .navbar.fixed-bottom {
-  background: #437673;
+  background: black;
 }

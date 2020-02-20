@@ -1,31 +1,38 @@
 <div class="container-fluid fullscreen">
-  <div class="row">
-    <div class="col-6 fullscreen">
-
-    <% @dog.photos.each do |photo| %>
-    <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
-    <% end %>
-    </div>
-
-    <div class="col-6">
-    <h1><%= @dog.name %></h1>
-    <p><%= @dog.age %></p>
-    <p><%= @dog.race %></p>
-    <p><%= @dog.bio %></p>
-
-    <p><%= @dog.owner.name %></p>
-    <%= link_to "back", root_path %>
-    <%= link_to "update", edit_dog_path %>
-    <%= link_to "delete", dog_path(@dog), method: :delete %>
-    <%= link_to "rent me!", new_dog_rental_path(@dog) %>
-
+  <div class="row align-items-center">
+    <div class="col-12 col-md-6 fullscreen p-0" style="background: black;">
+      <% if @dog.photos %>
+        <div id="carouselExampleSlidesOnly" class="carousel slide carousel-fade" data-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <%= cl_image_tag @dog.photos.first.key, crop: :fill, class: "d-block w-100 fullscreen-img", alt: "First slide" %>
+            </div>
+              <% if @dog.photos.second %>
+            <div class="carousel-item">
+              <%= cl_image_tag @dog.photos.second.key, crop: :fill, class: "d-block w-100 fullscreen-img", alt: "Second slide" %>
+              <% end %>
+            </div>
+          </div>
+            <% else %>
+            <%= image_tag "https://images.unsplash.com/photo-1537204696486-967f1b7198c8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3052&q=80" %>
+        <% end %>
       </div>
-      <nav class="navbar fixed-bottom justify-content-center">
-        <%= link_to "Rent a way your Woff", new_dog_path, class: "navbar-add"%>
-      </nav>
+    </div>
+    <div class="col-12 col-md-6 p-5">
+      <h3><%= @dog.name %></h3>
+      <p>Age: <%= @dog.age %></p>
+      <p>Breed: <%= @dog.race %></p>
+      <p>Description: <%= @dog.bio %></p>
+      <p>Owner: <%= @dog.owner.name %></p>
+      <%= link_to "back", root_path %>
+      <%= link_to "update", edit_dog_path %>
+      <%= link_to "delete", dog_path(@dog), method: :delete %>
+      <%= link_to "rent me!", new_dog_rental_path(@dog) %>
     </div>
   </div>
 </div>
+
+
 
 
 #<% if @dog.owner != current_user %>

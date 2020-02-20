@@ -1,10 +1,64 @@
 // Import page-specific CSS files here.
 @import "home";
 
+body {
+  background-color: white;
+}
 
-.background-pic-1 {
-  background-image: url('https://prodimage.images-bn.com/pimages/9780316227704_p1_v2_s550x406.jpg');
+.carousel-wrapper {
+  position: relative;
+  color: white;
+  width: 100%;
+  height: 100vh;
+  background-image: asset_url('dog3');
   background-size: cover;
+  background-position: center;
+}
+
+.collage {
+  background-image: asset_url('collage-dog');
+  background-size: cover;
+  width: 100vw;
+}
+
+.content-dog {
+  width: 100%;
+  padding-bottom: .2rem;
+  position: relative;
+}
+
+.input-group {
+  height: 50px;
+  width: 400px;
+  margin: 0 auto;
+}
+
+.input-group > .form-control {
+  height: 50px;
+  border: 0;
+}
+
+.input-group-text {
+  border: 0;
+  background: white;
+}
+
+.dog-name {
+  position: absolute;
+  bottom: 3px;
+  padding: .5rem 1rem;
+  background: white;
+  font-size: .8rem;
+  color: black;
+}
+
+
+a.nav-link {
+  color: white;
+}
+
+.carousel-text {
+  position: absolute;
 }
 
 .container-fluid {
@@ -32,27 +86,35 @@
   background: white;
 }
 
+.max {
+  max-width: 600px;
+}
+
 .container-fluid.paddings {
   padding-right: 100px;
   padding-left: 100px;
   padding-top: 100px;
-  padding-bottom: 200px;
+  padding-bottom: 150px;
 }
 
-.col {
-  text-align: center;
-  width: 100%;
-}
 
 h1 {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-weight: 600;
-  font-size: 2rem;
+  font-size: 3rem;
+  text-align: center;
+  margin-bottom: 3rem;
 }
 
 h4 {
   font-family: 'Open Sans', sans-serif;
   font-size: 1rem;
+}
+
+.dog-picture {
+  width: 100%;
+  object-fit: cover;
+  height: 35vh;
 }
 
 .content-dogs {
@@ -61,13 +123,16 @@ h4 {
   grid-column-gap: .2rem;
 }
 
-@media only screen and (max-width: 992px) {
+@media only screen and (max-width: 1180px) {
   .content-dogs {
     grid-template-columns: 1fr 1fr 1fr;
     padding-right: 0px;
     padding-left: 0px;
     padding-top: 0px;
     padding-bottom: 0px;
+  }
+  h1 {
+    font-size: 3rem;
   }
 }
 
@@ -76,24 +141,34 @@ h4 {
     grid-template-columns: 1fr 1fr;
   }
   .container-fluid.paddings {
-    padding-right: 0px;
-    padding-left: 0px;
-    padding-top: 0px;
+    padding-right: 24px;
+    padding-left: 24px;
+    padding-top: 24px;
+  }
+  h1 {
+    font-size: 3rem;
+  }
+  .carousel-text {
+   padding: 24px;
   }
 }
 
-.content-dog {
-  position: relative;
-  width: 100%;
-  padding-top: 95%;
+@media screen and (max-width: 500px) {
+  h1 {
+   font-size: 2.2rem;
+  }
+  .input-group {
+   width: 300px;
+  }
+
 }
 
-.content-d {
-  position: absolute;
-  top: 0;
+@media only screen and (max-width: 400px) {
+  .content-dogs {
+   grid-template-columns: 1fr;
+  }
+  .dog-picture {
+   height: 45vh;
+}
 }
 
-.dog-picture {
-  width: 100%;
-  object-fit: cover;
-}

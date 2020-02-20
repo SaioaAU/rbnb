@@ -1,26 +1,29 @@
 
 <div class="container-fluid top background-green fullscreen">
-
-  <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <h1>Hello</h1>
-      <%= image_tag "https://prodimage.images-bn.com/pimages/9780316227704_p1_v2_s550x406.jpg", class: "d-block w-100" %>
-    </div>
-    <div class="carousel-item">
-      <div>
-      <%= image_tag "https://prodimage.images-bn.com/pimages/9780316227704_p1_v2_s550x406.jpg", class: "d-block w-100" %>
-      </div>
-    </div>
-    <div class="carousel-item">
-      <%= image_tag "https://prodimage.images-bn.com/pimages/9780316227704_p1_v2_s550x406.jpg", width: 300, class: "d-block w-100" %>
-    </div>
-  </div>
-    <nav class="navbar fixed-bottom justify-content-center">
-        <%= link_to "Rent a way your Woff", new_dog_path, class: "navbar-add"%>
-      </nav>
+        <div class="carousel-wrapper d-flex align-items-center justify-content-center">
+          <div class="carousel-text align-items-center justify-content-center">
+          <h1>1680 dogs ready to play, cuddle and bit you in the ass</h1>
+          <div
+            id="map"
+            style="width: 100%;
+            height: 200px;"
+            data-markers="<%= @markers.to_json %>"
+            data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+          ></div>
+            <div class="input-group md-form form-sm form-2 pl-0">
+              <input class="form-control my-0 py-1 red-border" type="text" placeholder="Find dogs near you!" aria-label="Search">
+              <div class="input-group-append">
+                <span class="input-group-text red lighten-3" id="basic-text1"><i class="fas fa-search text-grey"
+                    aria-hidden="true"></i></span>
+              </div>
+            </div>
+          </div>
+        </div>
 </div>
-  </div>
+
+  <nav class="navbar fixed-bottom justify-content-center">
+    <%= link_to "RENT A WAY YOUR WOFF", new_dog_path, class: "navbar-add"%>
+  </nav>
 
 
 <div class="container-fluid paddings">
@@ -28,13 +31,14 @@
     <% @dogs.each do |dog| %>
     <%= link_to dog_path(dog) do %>
     <div class="content-dog">
-      <div class="content-d">
+        <div class="dog-name">
+          <%= dog.name %>
+        </div>
         <% if !dog.photos.first.nil? %>
         <%= cl_image_tag dog.photos.first.key, class: "dog-picture" %>
         <% else %>
         <%= image_tag "https://images.unsplash.com/photo-1537204696486-967f1b7198c8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3052&q=80", class: "dog-picture" %>
         <% end %>
-      </div>
     </div>
     <% end %>
   <% end %>

@@ -28,7 +28,7 @@ class DogsController < ApplicationController
     if @dog.save
       redirect_to dog_path(@dog)
     else
-      redirect_to new_dog_path
+      render :new
     end
   end
 
@@ -55,7 +55,7 @@ class DogsController < ApplicationController
   end
 
   def dog_params
-    params.require(:dog).permit(:name, :age, :race, :bio, :available_start_date, :available_end_date, photos: [])
+    params.require(:dog).permit(:name, :age, :race, :bio, :address, :available_start_date, :available_end_date, photos: [])
   end
 
 end

@@ -5,12 +5,12 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-
+require "open-uri"
 require 'faker'
 puts 'Cleaning database...'
+Rental.destroy_all
 Dog.destroy_all
 User.destroy_all
-Rental.destroy_all
 
 puts 'Creating users...'
 
@@ -29,22 +29,32 @@ puts 'Creating dogs...'
 
 50.times do
   today = Date.today + rand(0..50)
-  dogs_attributes =
-    {
-      name: Faker::Creature::Dog.unique.name,
-      age: Faker::Creature::Dog.age,
-      race: Faker::Creature::Dog.breed,
-      bio: 'Like to walk in the woods and pee on trees. Woff!',
-      available_start_date: today,
-      available_end_date: today + rand(0..50),
-      owner: User.all.sample
-    }
-  Dog.create!(dogs_attributes)
+  streets = [" Schweigaards gate", " Sognsveien", " Karl johans Gate", " Skjelderups gate", " Akersgate"]
+  dogname = Faker::Creature::Dog.unique.name
+  puts "we are going to create a dog #{dogname}"
+  address = JSON.load(URI.open("https://dog.ceo/api/breeds/image/random"))["message"]
+  breed = address.split("/")[-2]
+  dog = Dog.new({
+    name: dogname,
+    age: Faker::Creature::Dog.age,
+    race: breed,
+    bio: 'Like to walk in the woods and pee on trees. Woff!',
+    available_start_date: today,
+    available_end_date: today + rand(0..50),
+    owner: User.all.sample,
+    address: rand(1..30).to_s + streets.sample,
+  })
+  file = URI.open(URI.escape(address))
+  if file.class == Tempfile
+    dog.photos.attach(io: file, filename: "#{dogname}.jpg", content_type: 'image/jpg')
+    dog.save!
+  end
 end
 
 puts 'Creating rentals...'
 
-50.times do
+30.times do |i|
+  puts "creating rental n #{i}..."
   today = Date.today + rand(0..50)
   rentals_attributes =
     {

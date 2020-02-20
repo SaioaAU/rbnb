@@ -1,0 +1,39 @@
+.form_dog {
+  object-fit: cover;
+  border-radius: 50%;
+  width: 33vw;
+  height: 33vw;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.header_container {
+  width: auto;
+}
+
+.img_container {
+  width: auto;
+  position: absolute;
+  right: 15vw;
+  top: 15vh;
+  display: none;
+}
+
+.form_container {
+  width: 90vw;
+  background-color: #F2FFF0;
+  padding-right: 5vw;
+  padding-left: 5vw;
+}
+
+p {
+  margin: 0;
+}
+
+
+

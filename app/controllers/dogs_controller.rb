@@ -8,7 +8,7 @@ class DogsController < ApplicationController
     else
       @dogs = Dog.all
     end
-
+    @dog = Dog.new
     @markers = @dogs.map do |dog|
       {
         lat: dog.latitude,

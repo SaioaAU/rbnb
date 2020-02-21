@@ -6,8 +6,17 @@
   <div class="carousel-wrapper d-flex align-items-center justify-content-center">
     <div class="carousel-text align-items-center justify-content-center">
     <h1><%= Dog.count %> dogs ready to play, cuddle and bit you in the ass</h1>
+
+
+
+
+
+
+
+
       <div
         id="map"
+        class="hidden-map"
         style="width: 100%;
         height: 600px;"
         data-markers="<%= @markers.to_json %>"
@@ -16,6 +25,29 @@
     </div>
   </div>
 </div>
+
+<script>
+function classToggle() {
+    this.classList.toggle('hidden-map');
+    this.classList.toggle('shown-map');
+    style.cssText ="-webkit-transition: all 0.5s ease-in-out;";
+}
+document.querySelector('#div').addEventListener('click', classToggle);
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <div class="container-fluid paddings">
   <div class="content-dogs pb-10">

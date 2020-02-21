@@ -3,9 +3,12 @@ class DogsController < ApplicationController
 
 
   def index
-    result = Geocoder.search("34 schweigaards gate")
-    @dogs = Dog.geocoded #returns dogs with coordinates
-    @dog = Dog.new
+    if params[:query].present?
+      @dogs = Dog.where("address ILIKE ?", "%#{params[:query]}%")
+    else
+      @dogs = Dog.all
+    end
+
     @markers = @dogs.map do |dog|
       {
         lat: dog.latitude,
@@ -65,7 +68,7 @@ class DogsController < ApplicationController
   end
 
   def dog_params
-    params.require(:dog).permit(:name, :age, :race, :bio, :address, :available_start_date, :available_end_date, photos: [])
+    params.require(:dog).permit(:query, :name, :age, :race, :bio, :address, :available_start_date, :available_end_date, photos: [])
   end
 
 end

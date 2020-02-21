@@ -1,3 +1,22 @@
+
   <nav class="navbar fixed-bottom justify-content-center">
-    <%= link_to "RENT AWAY YOUR WOFF", new_dog_path, class: "navbar-add"%>
-  </nav>
+
+
+
+    <!-- Button trigger modal -->
+<a type="button" class="navbar-add" data-toggle="modal" data-target="#newdog">
+  RENT AWAY YOUR WOOF
+</a>
+
+<!-- Modal -->
+</nav>
+
+<div class="modal fade" id="newdog" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+       <div class="modal-body">
+        <%= render 'dogs/new', dog: dog %>
+      </div>
+    </div>
+  </div>
+</div>

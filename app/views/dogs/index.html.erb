@@ -5,15 +5,18 @@
 
   <div class="carousel-wrapper d-flex align-items-center justify-content-center">
     <div class="carousel-text align-items-center justify-content-center">
-    <h1><%= Dog.count %> dogs ready to play, cuddle and bit you in the ass</h1>
-
-
-
-
-
-
-
-
+      <h1><%= Dog.count %> dogs ready to play, cuddle and bit you in the ass</h1>
+      <div class="search_field" style="text-align: center;">
+        <%= form_tag root_path, method: :get do %>
+          <%= text_field_tag :query,
+            params[:query],
+            class: "form-control",
+            placeholder: "Find a dog in your city!!"
+          %>
+          <%= submit_tag "Search", class: "btn btn-primary" %>
+        <% end %>
+      </div>
+    </div>
       <div
         id="map"
         class="hidden-map"
@@ -23,7 +26,6 @@
         data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
       ></div>
     </div>
-  </div>
 </div>
 
 <script>
@@ -35,16 +37,7 @@ function classToggle() {
 document.querySelector('#div').addEventListener('click', classToggle);
 </script>
 
-<div class="search_field">
-  <%= form_tag root_path, method: :get do %>
-    <%= text_field_tag :query,
-      params[:query],
-      class: "form-control",
-      placeholder: "Find a dog in your city!!"
-    %>
-    <%= submit_tag "Search", class: "btn btn-primary" %>
-  <% end %>
-</div>
+
 <!-- the list of movies -->
 
 <div class="container-fluid paddings">

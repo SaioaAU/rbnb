@@ -49,9 +49,30 @@
 
       <div class="d-flex justify-content-between mt-5">
       <div>
+
+
+
+
+
+
+
         <% if @dog.owner != current_user %>
-        <%= link_to "Rent me!", new_dog_rental_path(@dog), class:"btn btn-light" %>
-        <% end %>
+
+        <!-- !!!!!!!Render modal!!!!!!!! -->
+        <%= render 'components/modal' %>
+                <% end %>
+
+
+
+
+
+
+
+
+
+
+
+
       </div>
       <div>
         <%= link_to root_path do %>

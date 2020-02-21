@@ -14,7 +14,7 @@ User.destroy_all
 
 puts 'Creating users...'
 
-50.times do
+30.times do
   users_attributes =
     {
       name: Faker::Name.name,
@@ -27,9 +27,9 @@ end
 puts 'Creating dogs...'
 
 
-50.times do
+30.times do
   today = Date.today + rand(0..50)
-  streets = [" Schweigaards gate", " Sognsveien", " Karl johans Gate", " Skjelderups gate", " Akersgate"]
+  streets = [" Schweigaards gate, Sandnes","South Circular Road, Dublin", "North Circular Road, Dublin", " Gran Via, Bilbao", " Lapurdi, Galdakao", " Sognsveien, Oslo", " Karl johans Gate, Gothenburg", " Skjelderups gate, Oslo", " Akersgate, Oslo"]
   dogname = Faker::Creature::Dog.unique.name
   puts "we are going to create a dog #{dogname}"
   address = JSON.load(URI.open("https://dog.ceo/api/breeds/image/random"))["message"]

@@ -1,9 +1,6 @@
-<div class="container-fluid collage">
-  <div class="container carousel-inner ">
-    <div class="row justify-content-center align-items-center">
-      <div class="col max">
+
         <h2>Make your Woff go boff</h2>
-          <%= simple_form_for @dog do |f| %>
+          <%= simple_form_for dog do |f| %>
           <%= f.input :name %>
           <%= f.input :age %>
           <%= f.input :race %>
@@ -14,7 +11,3 @@
           <%= f.input :photos, as: :file, input_html: { multiple: true } %>
           <%= f.button :submit, class:"btn btn-warning" %>
           <% end %>
-      </div>
-    </div>
-  </div>
-</div>

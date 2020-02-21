@@ -3,6 +3,7 @@ class DogsController < ApplicationController
 
 
   def index
+    @dog = Dog.new
     if params[:query].present?
       @dogs = Dog.where("address ILIKE ?", "%#{params[:query]}%")
     else

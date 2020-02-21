@@ -1,37 +1,67 @@
+<%= render 'components/navbaroptional' %>
 
+<div class="container-fluid" style="padding: 80px;">
+  <h4 class="pending">Dogs I want to rent</h4>
+  <h4 class="pending-text mb-3">Confirmed</h4>
+  <div class="row">
+    <% @myConfirmedRentals.each do |rental| %>
+      <%  rental.dog.photos.each do |photo| %>
+    <div class="col">
+        <%= image_tag photo %>
+        <p><%= rental.dog.name %></p>
+        <p><%= rental.rented_start_date %></p>
+        <p><%= rental.rented_nd_date %></p>
+    </div>
+    <% end %>
+    <% end %>
+  </div>
 
-<h1>Rentals</h1>
+    <h4 class="pending-text-red mb-3">Pending</h4>
+    <div class="dog-grid">
+      <% @myPendingRentals.each do |rental| %>
+        <% rental.dog.photos.each do |photo| %>
+          <div class="card-product p-0">
+            <%= image_tag photo %>
+              <div class="card-product-infos">
+                <h2><%= rental.dog.name  %></h2>
+                <p>text<%= rental.rented_start_date %></p>
+                <p>text<%= rental.rented_nd_date %></p>
+            </div>
+          </div>
+       <% end %>
+    <% end %>
+  </div>
 
-<h2>my dogs rentals</h2>
+  <h4 class="pending">My dog rentals</h4>
+  <h4 class="pending-text">Confirmed</h4>
+  <div class="dog-grid">
+    <% @myDogsConfirmedRentals.each do |rental| %>
+    <% rental.dog.photos.each do |photo| %>
+    <div class="card-product mb-3 p-0">
+      <%= image_tag photo %>
+      <div class="card-product-infos">
+        <p><%= rental.user %></p>
+        <p><%= rental.rented_start_date %></p>
+        <p><%= rental.rented_nd_date %></p>
+      </div>
+    <% end %>
+    <% end %>
+  </div>
 
-<h3>confirmed:</h3>
-<% @myDogsConfirmedRentals.each do |rental| %>
-  <%= rental.user %>
-  <%= rental.rented_start_date %>
-  <%= rental.rented_nd_date %>
-  <p>✅</p>
-<% end %>
-
-<h3>pending: </h3>
-<% @myDogsNotConfirmedRentals.each do |rental| %>
-  <%= rental.user %>
-  <%= rental.rented_start_date %>
-  <%= rental.rented_nd_date %>
-  <%= link_to "confirm", confirm_rental_path(rental), method: :post %>
-<% end %>
-
-<h2>My rentals</h2>
-<h3>My confirmed rentals</h3>
-<% @myConfirmedRentals.each do |rental| %>
-  <p><%= rental.dog.name %> ✅</p>
-  <p><%= rental.rented_start_date %></p>
-  <p><%= rental.rented_nd_date %></p>
-<% end %>
-
-<h3>My pending rentals</h3>
-<% @myPendingRentals.each do |rental| %>
-  <p><%= rental.dog.name  %></p>
-  <p><%= rental.rented_start_date %></p>
-  <p><%= rental.rented_nd_date %></p>
-<% end %>
+  <h4 class="pending-text-red mb-3">Pending</h4>
+  <div class="dog-grid">
+    <% @myDogsNotConfirmedRentals.each do |rental| %>
+    <% rental.dog.photos.each do |photo| %>
+    <div class="col-3 card-product mb-3 p-0">
+      <%= image_tag photo %>
+      <div class="card-product-infos">
+        <%= rental.user %>
+        <%= rental.rented_start_date %>
+        <%= rental.rented_nd_date %>
+        <%= link_to "confirm", confirm_rental_path(rental), method: :post %>
+      </div>
+    <% end %>
+    <% end %>
+  </div>
+</div>
 

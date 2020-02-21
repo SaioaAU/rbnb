@@ -1,4 +1,3 @@
-<%= render 'components/navbar' %>
 <%= render 'components/navbarbottom', dog: @dog %>
 
 <div class="container-fluid top background-green fullscreen">
@@ -19,26 +18,16 @@
     </div>
       <div
         id="map"
-        class="hidden-map"
-        style="width: 100%;
-        height: 600px;"
+        class="default-map"
         data-markers="<%= @markers.to_json %>"
         data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
       ></div>
+    
     </div>
 </div>
 
-<script>
-function classToggle() {
-    this.classList.toggle('hidden-map');
-    this.classList.toggle('shown-map');
-    style.cssText ="-webkit-transition: all 0.5s ease-in-out;";
-}
-document.querySelector('#div').addEventListener('click', classToggle);
-</script>
-
-
 <!-- the list of movies -->
+
 
 <div class="container-fluid paddings">
   <div class="content-dogs pb-10">

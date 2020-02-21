@@ -1,0 +1,121 @@
+ <% @dog = Dog.new %>
+        <!-- Button trigger modal -->
+<!-- <button type="button" class="dog-btn" data-toggle="modal" data-target="#exampleModalCenter" style="width: 100%; position: fixed; left: 0; bottom: 0;">
+  Launch demo modal
+</button> -->
+
+<!-- Modal -->
+<div class="modal fade" id="newDogModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalCenterTitle">Make your Woff go boff</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="form_container">
+
+
+
+ <%= simple_form_for @dog do |f| %>
+
+      <div class="form_element_container">    <!-- !!!NAME!!! -->
+        <div class="text_container">
+
+          <%= f.input :name, as: :string, label: "Name", placeholder: "Leo" %>
+
+        </div> <!-- text container -->
+
+      </div> <!-- form element container -->
+
+
+
+      <div class="form-element_container">    <!-- !!!AGE!!! -->
+        <div class="text_container">
+
+          <%= f.input :age, as: :string, label: "Age", placeholder: "10" %>
+
+          </div> <!-- input -->
+
+      </div> <!-- form element container -->
+
+
+
+       <div class="form-element_container">    <!-- !!!RACE!!! -->
+        <div class="text_container">
+
+          <%= f.input :race, as: :string, label: "race", placeholder: "English Springer Spaniel" %>
+
+          </div> <!-- input -->
+
+      </div> <!-- form element container -->
+
+
+
+      <div class="form-element_container">    <!-- !!!ADDRESS!!! -->
+        <div class="text_container">
+
+          <%= f.input :address, as: :string, label: "Address", placeholder: "Doggy Lane 15" %>
+
+          </div> <!-- input -->
+
+      </div> <!-- form element container -->
+
+
+
+      <div class="form_element_container">    <!-- !!!BIO!!! -->
+        <div class="text_container">
+          <div class="label">
+            <label for="bio">Bio</label>
+          </div> <!-- label -->
+          <div class="input">
+
+              <textarea name="bio" id="#bio" rows="3" placeholder="add a short description of your dog"></textarea>
+
+          </div> <!-- input -->
+        </div> <!-- text container -->
+      </div> <!-- form element container -->
+
+
+
+      <div class="form_element_container">    <!-- !!!AVAILABLE FROM!!! -->
+        <div class="text_container">
+
+          <%= f.input :available_start_date, as: :string, label: "From", placeholder: "#{Date.today.strftime("%-d %b %Y")}", wrapper_html: { class: "inline_field_wrapper date_input" } %>
+
+        </div> <!-- text container -->
+
+      </div> <!-- form element container -->
+
+
+
+        <div class="form_element_container">    <!-- !!!AVAILABLE TO!!! -->
+        <div class="text_container">
+
+          <%= f.input :available_end_date, as: :string, label: "To", placeholder: "#{Date.today.strftime("%-d %b %Y")}", wrapper_html: { class: "inline_field_wrapper date_input" } %>
+
+        </div> <!-- text container -->
+
+      </div> <!-- form element container -->
+
+
+
+
+    </div> <!-- form container -->
+
+
+      </div>
+  <div class="button_container">
+    <%= f.button :submit, 'SAVE DOG' %>
+  </div> <!-- button container -->
+  <% end %>
+      <!-- <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div> -->
+    </div>
+  </div>
+</div>
+      <!--   <%#= link_to "Rent me!", new_dog_rental_path(@dog), class:"btn btn-light" %> -->

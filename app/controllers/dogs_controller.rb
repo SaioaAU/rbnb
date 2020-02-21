@@ -5,6 +5,7 @@ class DogsController < ApplicationController
   def index
     result = Geocoder.search("34 schweigaards gate")
     @dogs = Dog.geocoded #returns dogs with coordinates
+    @dog = Dog.new
     @markers = @dogs.map do |dog|
       {
         lat: dog.latitude,
@@ -23,12 +24,21 @@ class DogsController < ApplicationController
   end
 
   def create
+    @dogs = Dog.geocoded #returns dogs with coordinates
+        @markers = @dogs.map do |dog|
+      {
+        lat: dog.latitude,
+        lng: dog.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { dog: dog }),
+        image_url: helpers.asset_url('dog-icon.png')
+      }
+    end
     @dog = Dog.new(dog_params)
     @dog.owner = current_user
     if @dog.save
       redirect_to dog_path(@dog)
     else
-      render :new
+      render :index
     end
   end
 

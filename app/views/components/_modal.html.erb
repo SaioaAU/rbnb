@@ -1,18 +1,25 @@
-<div class="container">
-  <div class="header_container">    <!-- !!!HEADER!!! -->
-    <p>request playdate w/</p>
-    <h2>Tito</h2>
-  </div> <!-- header container -->
+ <% @rental = Rental.new %>
+        <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+  Launch demo modal
+</button>
 
-  <div class="img_container">    <!-- !!!IMAGE!!! -->
-    <%#= image_tag "https://prodimage.images-bn.com/pimages/9780316227704_p1_v2_s550x406.jpg", class: "form_dog" %>
-  </div>
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalCenterTitle">Rent <%= @dog.name %></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="form_container">
 
 
-  <div class="form_container">
 
-
-    <%= simple_form_for [@dog, @rental] do |f| %>
+        <%= simple_form_for [@dog, @rental] do |f| %>
 
 
       <div class="form_element_container">    <!-- !!!PICK-UP!!! -->
@@ -54,12 +61,16 @@
     </div> <!-- form container -->
 
 
+      </div>
   <div class="button_container">
     <%= f.button :submit, 'SEND' %>
   </div> <!-- button container -->
   <% end %>
-
-
-</div> <!-- container -->
-
-
+      <!-- <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div> -->
+    </div>
+  </div>
+</div>
+      <!--   <%#= link_to "Rent me!", new_dog_rental_path(@dog), class:"btn btn-light" %> -->
